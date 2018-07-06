@@ -1,0 +1,28 @@
+.swap-btn {
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  background: hsl(203, 73%, 68%);
+  position: absolute;
+  right: 50px;
+  top: 107px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 16px;
+  transition: background .17s ease-out;
+}
+
+.swap-btn:hover {
+  cursor: pointer;
+  background: hsl(203, 73%, 58%);
+}
+
+.swap-btn::after {
+  content: '\21C5';
+  position: relative;
+  top: 2px;
+}

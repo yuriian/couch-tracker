@@ -1,0 +1,36 @@
+.stations {
+  position: absolute;
+  z-index: 1;
+  max-height: 250px;
+  overflow-y: auto;
+  background: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: -13px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.stations__item {
+  padding: 12px 5px 12px 25px;
+  margin: 0;
+  color: #12354c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .1s ease-out;
+}
+
+.stations__item:hover {
+  cursor: pointer;
+  color: #fff;
+  background: hsl(204, 62%, 30%);
+}
+
+.stations__item:first-child {
+  background: hsl(204, 62%, 18%);
+  color: #fff;
+}

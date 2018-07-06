@@ -1,0 +1,14 @@
+.container {
+  height: 100%;
+}
+
+.header {
+  height: 64px;
+  background-color: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  margin-left: 20px;
+  margin-top: 2px;
+}
