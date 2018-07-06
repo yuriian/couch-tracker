@@ -24,10 +24,13 @@ export const showStationListTo = () => {
     payload: stationListMock
   };
 };
-export const hideStationList = () => {
-  return {
-    type: HIDE_STATION_LIST
-  };
+export const hideStationList = () => dispatch => {
+  setTimeout(() => {
+    dispatch({
+      type: HIDE_STATION_LIST
+    })
+  }, 100);
+
 };
 
 export const addStationFrom = stationName => {
