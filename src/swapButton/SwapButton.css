@@ -14,6 +14,7 @@
   color: #fff;
   font-size: 16px;
   transition: background .17s ease-out;
+  transform: rotate(90deg);
 }
 
 .swap-btn:hover {
@@ -21,8 +22,8 @@
   background: hsl(203, 73%, 58%);
 }
 
-.swap-btn::after {
+/* .swap-btn::after {
   content: '\21C5';
   position: relative;
   top: 2px;
-}
+} */

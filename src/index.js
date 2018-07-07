@@ -6,6 +6,9 @@ import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+
 import './index.css';
 import App from './App';
 import {
@@ -13,6 +16,8 @@ import {
   manageStationList,
   setSearchStation
 } from './reducers/reducers';
+
+library.add(faStroopwafel);
 
 const logger = createLogger();
 const rootReducer = combineReducers({

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import './Form.css';
-
 import StationList from './../stationList/StationList';
 import SwapButton from './../swapButton/SwapButton';
 
