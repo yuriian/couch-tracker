@@ -9,7 +9,8 @@ import SwapButton from './../swapButton/SwapButton';
 import {
   showStationListFrom,
   showStationListTo,
-  hideStationList,
+  hideStationListFrom,
+  hideStationListTo,
   addStationFrom,
   addStationTo,
   swapStations,
@@ -38,22 +39,24 @@ const mapDispatchToProps = dispatch => {
       event.preventDefault();
       dispatch(showStationListFrom());
     },
-
     onFocusInputTo: event => {
       event.preventDefault();
       dispatch(showStationListTo());
     },
 
-    onBlurInput: event => {
+    onBlurInputFrom: event => {
       event.preventDefault();
-      dispatch(hideStationList());
+      dispatch(hideStationListFrom());
+    },
+    onBlurInputTo: event => {
+      event.preventDefault();
+      dispatch(hideStationListTo());
     },
 
     onSelectStationFrom: event => {
       event.preventDefault();
       dispatch(addStationFrom(event.target.textContent));
     },
-
     onSelectStationTo: event => {
       event.preventDefault();
       dispatch(addStationTo(event.target.textContent));
@@ -68,7 +71,6 @@ const mapDispatchToProps = dispatch => {
       event.preventDefault();
       dispatch(setSearchQueryFrom(event.target.value));
     },
-
     onChangeInputTo: event => {
       event.preventDefault();
       dispatch(setSearchQueryTo(event.target.value));
@@ -98,7 +100,9 @@ class Form extends Component {
 
       onFocusInputFrom,
       onFocusInputTo,
-      onBlurInput,
+
+      onBlurInputFrom,
+      onBlurInputTo,
 
       onChangeInputFrom,
       onChangeInputTo,
@@ -108,24 +112,25 @@ class Form extends Component {
 
       onSwapStations
     } = this.props;
+    debugger;
 
     if (searchQueryFrom) {
       stationListFrom = stationListFrom.filter(station =>
-        station.toLowerCase().includes(searchQueryFrom)
+        station.toLowerCase().includes(searchQueryFrom.toLowerCase())
       );
     }
 
     if (searchQueryTo) {
       stationListTo = stationListTo.filter(station =>
-        station.toLowerCase().includes(searchQueryTo)
+        station.toLowerCase().includes(searchQueryTo.toLowerCase())
       );
     }
 
-    const inputValueFrom = selectedStationFrom
-      ? selectedStationFrom
-      : searchQueryFrom;
+    const inputValueFrom = searchQueryFrom
+      ? searchQueryFrom
+      : selectedStationFrom;
 
-    const inputValueTo = selectedStationTo ? selectedStationTo : searchQueryTo;
+    const inputValueTo = searchQueryTo ? searchQueryTo : selectedStationTo;
 
     const formBtnClass =
       !selectedStationFrom || !selectedStationTo
@@ -139,7 +144,7 @@ class Form extends Component {
           <input
             className="form__input"
             onFocus={onFocusInputFrom}
-            onBlur={onBlurInput}
+            onBlur={onBlurInputFrom}
             onChange={onChangeInputFrom}
             type="text"
             ref={input => (this.inputFrom = input)}
@@ -160,7 +165,7 @@ class Form extends Component {
           <input
             className="form__input"
             onFocus={onFocusInputTo}
-            onBlur={onBlurInput}
+            onBlur={onBlurInputTo}
             onChange={onChangeInputTo}
             type="text"
             ref={input => (this.inputTo = input)}
