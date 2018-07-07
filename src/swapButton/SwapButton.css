@@ -12,7 +12,7 @@
   align-items: center;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   transition: background .17s ease-out;
   transform: rotate(90deg);
 }

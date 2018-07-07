@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
 import './index.css';
 import App from './App';
@@ -17,7 +17,7 @@ import {
   setSearchStation
 } from './reducers/reducers';
 
-library.add(faStroopwafel);
+library.add(faExchangeAlt);
 
 const logger = createLogger();
 const rootReducer = combineReducers({
